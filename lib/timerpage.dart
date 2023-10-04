@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:midnight/main.dart';
 
 class timerpage extends StatefulWidget {
   @override
@@ -8,15 +7,15 @@ class timerpage extends StatefulWidget {
 }
 
 class _timerpageState extends State<timerpage> {
-  int _Counter = 200;
+  int _counter = 200;
   late Timer _timer;
 
   void startTimer() {
-    _Counter = 200;
+    _counter = 200;
     _timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      if (_Counter > 0) {
+      if (_counter > 0) {
         setState(() {
-          _Counter--;
+          _counter--;
         });
       } else {
         _timer.cancel();
@@ -32,7 +31,7 @@ class _timerpageState extends State<timerpage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '$_Counter',
+              '$_counter',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
             ),
             ElevatedButton(
@@ -44,17 +43,18 @@ class _timerpageState extends State<timerpage> {
               height: 24,
             ),
             ElevatedButton(
-                onPressed: () {
-                  _timer.cancel();
-                },
-                child: Text('Pause')),
+              onPressed: () {
+                _timer.cancel();
+              },
+              child: Text('Pause'),
+            ),
             const SizedBox(
               height: 24,
             ),
             ElevatedButton(
                 onPressed: () {
                   setState(() {
-                    _Counter = 200;
+                    _counter = 200;
                   });
                 },
                 child: Text('Reset timer')),
