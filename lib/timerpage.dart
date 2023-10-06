@@ -25,6 +25,15 @@ class _timerpageState extends State<timerpage> {
 
   @override
   Widget build(BuildContext context) {
+    MaterialApp(
+      theme: ThemeData(
+        scaffoldBackgroundColor:
+            Colors.black, // Set to your preferred dark color
+        // You can customize other theme properties here.
+      ),
+      // ...
+    );
+
     return Scaffold(
       body: Center(
         child: Column(
@@ -32,7 +41,11 @@ class _timerpageState extends State<timerpage> {
           children: [
             Text(
               '$_counter',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
+              style: TextStyle(
+                color: Colors.amber,
+                fontSize: 16,
+                fontWeight: FontWeight.normal,
+              ),
             ),
             ElevatedButton(
                 onPressed: () {

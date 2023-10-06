@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:midnight/timerpage.dart';
+import 'package:midnight/splash.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,11 +9,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: timerpage(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: splash());
   }
 }
